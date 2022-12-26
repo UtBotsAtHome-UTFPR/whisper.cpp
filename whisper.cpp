@@ -2555,7 +2555,6 @@ const char * whisper_print_system_info(void) {
     s += "AVX = "       + std::to_string(ggml_cpu_has_avx())       + " | ";
     s += "AVX2 = "      + std::to_string(ggml_cpu_has_avx2())      + " | ";
     s += "AVX512 = "    + std::to_string(ggml_cpu_has_avx512())    + " | ";
-    s += "FMA = "       + std::to_string(ggml_cpu_has_fma())       + " | ";
     s += "NEON = "      + std::to_string(ggml_cpu_has_neon())      + " | ";
     s += "ARM_FMA = "   + std::to_string(ggml_cpu_has_arm_fma())   + " | ";
     s += "F16C = "      + std::to_string(ggml_cpu_has_f16c())      + " | ";
@@ -2885,11 +2884,11 @@ int whisper_full(
         int seek_delta = 100*WHISPER_CHUNK_SIZE;
 
         // print the prompt
-        //printf("\n\n");
-        //for (int i = 0; i < prompt.size(); i++) {
+        // printf("\n\n");
+        // for (int i = 0; i < prompt.size(); i++) {
         //    printf("%s: prompt[%d] = %s\n", __func__, i, ctx->vocab.id_to_token[prompt[i]].c_str());
-        //}
-        //printf("\n\n");
+        // }
+        // printf("\n\n");
 
         // the accumulated transcription in the current interation
         int result_len = 0;
